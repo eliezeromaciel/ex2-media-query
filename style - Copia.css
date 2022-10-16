@@ -1,0 +1,202 @@
+/* RESET */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /* As propriedades de largura (width) e de altura (height) incluem o tamanho padding size e a propriedade border, mas não incluem a propriedade margin. */
+}
+
+/* USO DE VARIÁVEIS */
+
+:root {
+    --amarelo: #fce7a8;
+    --verde: #8FBCB3;
+    --cinza-escuro: #788895;
+    --cinza-claro: #DFE6ED;
+}
+
+
+/* LAYOUT */
+
+body {
+    background-color: var(--amarelo);
+    padding: 3px;
+
+    height: 100vh;
+
+    display: grid;
+    gap: 3px;
+
+
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+    "cabecalho"
+    "principal"
+    "rodape";
+}
+
+.cabecalho {
+    background-color: var(--verde);
+    padding: 15px;
+
+    grid-area: cabecalho;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.principal {
+    background-color:var(--verde);
+    padding: 10px 30%;          /* SEGREDO PARA DIMINUIR AS MARGENS DA DIV.....*/ 
+    grid-area: principal;
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;        /* AO INVÉS DO JUSTIFY E ALIGN , PODERIA COLOCAR UM PADDING DE 50%*/
+}
+
+.rodape {
+    background-color: #90bcb3;
+    grid-area: rodape;
+
+    display: flex;              /* QUANDO O DISPLAY É FLEX, OS ITENS JÁ FICAM MEIO QUE DISPLAY: INLINE , em linha */
+    flex-direction: column;        /* CONFIGURAÇÕES IMPORTANTES */
+    justify-content: center;    /* CONFIGURAÇÕES IMPORTANTES */
+    align-items: center;        /* CONFIGURAÇÕES IMPORTANTES */
+}
+
+
+
+
+/* COMPONENTES */
+
+.menu-cabecalho {
+    display: flex;
+    gap: 5px;  
+}
+
+.menu-cabecalho__item {
+    text-decoration: none;
+    color: white;
+    background-color: var(--cinza-escuro);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cabecalho__titulo {
+    flex-grow: 1;       /* USEI PARA CRESCER BASTANTE EM RELAÇÃO AO cabecalho__item, ASSIM AO CENTRALIZAR, O item ACABARÁ FICANDO NA MARGEM ESQUERDA*/
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.card-exercicio {          /* AQUI É PARA AS DUAS PRINCIPAIS DIVS*/
+    background-color: var(--cinza-claro);
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+   
+    display: flex;
+    flex-direction: row ;
+    
+    
+}
+
+.card-exercicio__entrada {
+    flex-grow: 1;
+    width: 0%;                  /* SEGREDO PARA DEIXAR DUAS DIVS COM TAMANHO IGUAL*/
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-evenly;
+    flex-basis: opx;
+}
+
+.card-exercicio__entrada input {
+    border-radius: 2px;
+    width: 100%;
+    border: none;
+}
+
+.card-exercicio__entrada button {
+    border-radius: 5px;
+    background-color: var(--cinza-escuro);
+    color: white;
+    width: 100% ;
+}
+
+.card-exercicio__saida {
+    flex-grow: 1;
+    width: 0%;
+    gap: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid var(--cinza-escuro) 2px;
+    background-color: var(--cinza-escuro);
+}
+
+.saida__label {
+    font-weight: 700;
+}
+
+.saida__resultado {
+    font-size: 50px;
+    font-weight: 1000;
+    align-self: center;
+}
+
+
+.card-exercicio__2__entrada {
+    padding: 20px;
+    flex-grow: 1;
+    width: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-exercicio__2__entrada input {
+    border: none;
+}
+
+.card-exercicio__2__entrada button {
+    border-radius: 5px;
+    background-color: var(--cinza-escuro);
+    color: white;
+    width: 100% ;
+}
+
+
+.card-exercicio__2__saida{
+    padding: 20px;
+    flex-grow: 1;
+    width: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    gap: 5px;
+}
+
+.card-exercicio__2__saida span {
+    font-weight: 700;
+}
+
+
+
+
+img {
+    width: 70%;
+    height: 70%;
+}
